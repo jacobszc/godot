@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://i8vk4n7otmf6"]
+
+[ext_resource type="Script" uid="uid://bfxjlxt8d8hol" path="res://character_body_2d.gd" id="1_gophc"]
+[ext_resource type="Texture2D" uid="uid://dv524imd24ed3" path="res://2d_sprite_animation_assets/run_animation/run-1.png" id="1_pob1m"]
+[ext_resource type="Texture2D" uid="uid://cvu0b2jxkmu8s" path="res://2d_sprite_animation_assets/run_animation/run-2.png" id="2_gophc"]
+[ext_resource type="Texture2D" uid="uid://cf4f3htrel8go" path="res://2d_sprite_animation_assets/run_animation/run-3.png" id="3_p0nl4"]
+[ext_resource type="Texture2D" uid="uid://13uc6xxl6kpu" path="res://2d_sprite_animation_assets/run_animation/run-4.png" id="4_da165"]
+[ext_resource type="Texture2D" uid="uid://cnf7trd4qixyn" path="res://2d_sprite_animation_assets/run_animation/run-5.png" id="5_r8ukj"]
+[ext_resource type="Texture2D" uid="uid://b81qlfvequgbd" path="res://2d_sprite_animation_assets/run_animation/run-6.png" id="6_1colc"]
+[ext_resource type="Texture2D" uid="uid://cpdyrq3bu11ct" path="res://2d_sprite_animation_assets/run_animation/run-7.png" id="7_hwiky"]
+[ext_resource type="Texture2D" uid="uid://crcc37dkk1oa5" path="res://2d_sprite_animation_assets/run_animation/run-8.png" id="8_mhwaj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1svla"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pob1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gophc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p0nl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_da165")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r8ukj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1colc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hwiky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mhwaj")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_gophc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(80, 80)
+sprite_frames = SubResource("SpriteFrames_1svla")
+animation = &"run"
+frame_progress = 0.244535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D"]
